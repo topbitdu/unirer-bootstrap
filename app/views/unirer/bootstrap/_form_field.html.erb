@@ -1,0 +1,40 @@
+<%
+  model = options[:model]
+  form  = options[:form]
+  name  = options[:name]
+  type  = options[:type]||:text_field
+
+  label_class = [ 'control-label', options[:label_class]||'col-xs-2' ].flatten.join ' '
+  field_class = [ options[:field_class]||'col-xs-10 input-group' ].flatten.join ' '
+  error_class = [ options[:error_class]||'col-xs-offset-2 col-xs-10 text-danger' ].flatten.join ' '
+
+  prefix = options[:prefix]
+  suffix = options[:suffix]
+
+  field_options = {
+      disabled:    options[:disabled],
+      class:       'form-control',
+      placeholder: options[:placeholder],
+      readonly:    options[:readonly],
+      maxlength:   options[:maxlength],
+      required:    options[:required]
+    }
+%>
+
+<div class='form-group'>
+  <%= form.label name, class: label_class %>
+  <div class='<%= field_class %>'>
+    <% if prefix.present? %>
+      <span class='input-group-addon'><%= prefix %></span>
+    <% end %>
+
+    <%= form.send type, name, field_options %>
+
+    <% if suffix.present? %>
+      <span class='input-group-addon'><%= suffix %></span>
+    <% end %>
+  </div>
+  <% if model.errors[name].present? %>
+    <p class='<%= error_class %>'><%= model.errors[name].first %></p>
+  <% end %>
+</div>
