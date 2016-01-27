@@ -11,7 +11,7 @@ Unirer (统一资源表现)是一系列的资源表现引擎。Bootstrap 资源�
 gem 'unirer-bootstrap'
 ```
 
-## Include the Concern in Controllers & Respond the Calls:
+## Render the Pre-defined Partials:
 ```erb
 <%= render partial: 'unirer/bootstrap/meta'   %>
 <%= render partial: 'unirer/bootstrap/script' %>
