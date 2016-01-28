@@ -41,7 +41,9 @@
       <span class='input-group-addon'><%= suffix %></span>
     <% end %>
   </div>
+
   <% if model.errors[name].present? %>
     <p class='<%= error_class %>'><%= model.errors[name].first %></p>
   <% end %>
+
 </div>
