@@ -4,6 +4,7 @@
   name  = options[:name]
   type  = options[:type]||:text_field
 
+  label_text  = options[:label]
   label_class = [ 'control-label', options[:label_class]||'col-xs-2' ].flatten.join ' '
   field_class = [ options[:field_class]||'col-xs-10 input-group' ].flatten.join ' '
   error_class = [ options[:error_class]||'col-xs-offset-2 col-xs-10 text-danger' ].flatten.join ' '
@@ -22,7 +23,13 @@
 %>
 
 <div class='form-group'>
-  <%= form.label name, class: label_class %>
+
+  <% if label_text.present? %>
+    <%= form.label name, class: label_class do %><%= label_text %><% end %>
+  <% else %>
+    <%= form.label name, class: label_class %>
+  <% end %>
+
   <div class='<%= field_class %>'>
     <% if prefix.present? %>
       <span class='input-group-addon'><%= prefix %></span>
