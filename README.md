@@ -70,7 +70,7 @@ The source codes of the Style partial:
 ### Render the Form Field
 The Form Field partial includes the HTML form field tags for Rails Form Builder and Bootstrap.
 ```erb
-<%= render partial: 'unirer/bootstrap/form_field', locals: { model: model, form: f, name: :phone_number, type: :tel_field } %>
+<%= render partial: 'unirer/bootstrap/form_field', locals: { options: { model: model, form: f, name: :phone_number, type: :tel_field } } %>
 ```
 
 The 4 options are required: model, form, name, and type.
