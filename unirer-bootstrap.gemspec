@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors     = [ 'Topbit Du' ]
   spec.email       = [ 'topbit.du@gmail.com' ]
   spec.homepage    = 'https://github.com/topbitdu/unirer-bootstrap'
-  spec.summary     = 'The Unirer Bootstrap resource representation engine includes Bootstrap-based resource representation templates & snippets.'
+  spec.summary     = 'Unirer Bootstrap Resource Representation Engine Bootstrap资源表现引擎'
   spec.description = 'Unirer (UNIfied Resource Representation) is a series of resource representation engines. The Bootstrap resource representation engine includes Bootstrap-based resource representation templates & snippets. Unirer (统一资源表现)是一系列的资源表现引擎。Bootstrap 资源表现引擎包括基于Bootstrap的资源表现模版和片段。'
   spec.license     = "MIT"
 
