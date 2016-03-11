@@ -10,3 +10,7 @@
 
 ## v0.3
 1. Improved the form_field partial to support the :label_text option
+
+## v0.4
+1. Improved the form_field partial to support the :group_class option
+2. Improved the form_field partial to support the Bootstrap has-error class

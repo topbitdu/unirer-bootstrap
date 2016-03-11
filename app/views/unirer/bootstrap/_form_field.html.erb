@@ -4,13 +4,20 @@
   name  = options[:name]
   type  = options[:type]||:text_field
 
-  label_text  = options[:label]
-  label_class = [ 'control-label', options[:label_class]||'col-xs-2' ].flatten.join ' '
-  field_class = [ options[:field_class]||'col-xs-10 input-group' ].flatten.join ' '
-  error_class = [ options[:error_class]||'col-xs-offset-2 col-xs-10 text-danger' ].flatten.join ' '
+  group_class_list = [ 'form-group',    options[:group_class] ]
+  label_class_list = [ 'control-label', options[:label_class]||'col-xs-2'  ]
+  field_class_list = [ 'input-group',   options[:field_class]||'col-xs-10' ]
+  error_class_list = [ 'text-danger',   options[:error_class]||'col-xs-offset-2 col-xs-10' ]
+  group_class_list << 'has-error' if model.errors[name].present?
 
-  prefix = options[:prefix]
-  suffix = options[:suffix]
+  group_class = group_class_list.flatten.join ' '
+  label_class = label_class_list.flatten.join ' '
+  field_class = field_class_list.flatten.join ' '
+  error_class = error_class_list.flatten.join ' '
+
+  label_text = options[:label]
+  prefix     = options[:prefix]
+  suffix     = options[:suffix]
 
   field_options = {
       disabled:    options[:disabled],
