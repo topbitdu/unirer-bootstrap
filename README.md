@@ -36,21 +36,19 @@ The source codes of the Meta partial:
 ```
 
 ### Render the Script
-The Script partial includes the HTML script tags for jQuery, Bootstrap, and React. All the CDN servers of the JavaScript libraries are optimized for China only.
+The Script partial includes the HTML script tags for jQuery, Bootstrap, and React. All the CDN servers of the JavaScript libraries are optimized for China only. The following code snippet does not load React JS.
 ```erb
 <%= render partial: 'unirer/bootstrap/script' %>
 ```
 
-The source codes of the Script partial:
-```html
-<%= javascript_include_tag '//cdn.bootcss.com/jquery/2.2.0/jquery.min.js'          %>
-<%= javascript_include_tag '//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js' %>
+The following code snippet loads the latest React JS.
+```erb
+<%= render partial: 'unirer/bootstrap/script', locals: { options: { react: true } } %>
+```
 
-<%= javascript_include_tag '//cdn.bootcss.com/moment.js/2.11.1/moment-with-locales.min.js'                         %>
-<%= javascript_include_tag '//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js' %>
-
-<%= javascript_include_tag '//cdn.bootcss.com/react/0.14.6/react.min.js'     %>
-<%= javascript_include_tag '//cdn.bootcss.com/react/0.14.6/react-dom.min.js' %>
+The following code snippet loads the React JS with the given version.
+```erb
+<%= render partial: 'unirer/bootstrap/script', locals: { options: { react: { version: '0.14.6' } } } %>
 ```
 
 ### Render the Style

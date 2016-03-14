@@ -29,7 +29,7 @@
     }
 %>
 
-<div class='form-group'>
+<div class='<%= group_class %>'>
 
   <% if label_text.present? %>
     <%= form.label name, class: label_class do %><%= label_text %><% end %>
