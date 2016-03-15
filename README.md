@@ -11,6 +11,15 @@ Unirer (统一资源表现)是一系列的资源表现引擎。Bootstrap 资源�
 gem 'unirer-bootstrap'
 ```
 
+
+
+## Include the Helper in your Application Controller before Render the Style or Script
+```ruby
+helper ::Unirer::Bootstrap::ApplicationHelper
+```
+
+
+
 ## Render the Pre-defined Partials
 ```erb
 <%= render partial: 'unirer/bootstrap/meta'   %>
@@ -18,6 +27,8 @@ gem 'unirer-bootstrap'
 <%= render partial: 'unirer/bootstrap/style'  %>
 <%= render partial: 'unirer/bootstrap/form_field', locals: { options: { model: model, form: f, name: :phone_number, type: :telephone_field } } %>
 ```
+
+
 
 ### Render the Meta
 The Meta partial includes the HTML meta tags for Bootstrap.
@@ -35,6 +46,8 @@ The source codes of the Meta partial:
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 ```
 
+
+
 ### Render the Script
 The Script partial includes the HTML script tags for jQuery, Bootstrap, and React. All the CDN servers of the JavaScript libraries are optimized for China only. The following code snippet does not load React JS.
 ```erb
@@ -48,22 +61,30 @@ The following code snippet loads the latest React JS.
 
 The following code snippet loads the React JS with the given version.
 ```erb
-<%= render partial: 'unirer/bootstrap/script', locals: { options: { react: { version: '0.14.6' } } } %>
+<%= render partial: 'unirer/bootstrap/script', locals: { options: { :jquery => { version: '2.2.0' }, :'moment-with-locales' => true, :'bootstrap-datetimepicker' => true, :react => { version: '0.14.6' } } } %>
 ```
+The following JavaScript libraries are always enabled, only the version can be configurable:
+- :jquery
+- :bootstrap
+The following JavaScript libraries are switchable, and the version can be configurable:
+- :'moment-with-locales'
+- :'bootstrap-datetimepicker'
+- :react
+
+
 
 ### Render the Style
 The Style partial includes the HTML style tags for Bootstrap and Font Awesome. All the CDN servers of the CSS libraries are optimized for China only.
 ```erb
-<%= render partial: 'unirer/bootstrap/style' %>
+<%= render partial: 'unirer/bootstrap/style', locals: { options: { :'font-awesome' => { version: '4.4.0' }, :'bootstrap-datetimepicker' => true } } %>
 ```
+The following CSS libraries are always enabled, only the version can be configurable:
+- :bootstrap
+The following JavaScript libraries are switchable, and the version can be configurable:
+- :'font-awesome'
+- :'bootstrap-datetimepicker'
 
-The source codes of the Style partial:
-```html
-<%= stylesheet_link_tag '//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css',       media: 'all' %>
-<%= stylesheet_link_tag '//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css', media: 'all' %>
 
-<%= stylesheet_link_tag '//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css', media: 'all' %>
-```
 
 ### Render the Form Field
 The Form Field partial includes the HTML form field tags for Rails Form Builder and Bootstrap.
@@ -74,8 +95,10 @@ The Form Field partial includes the HTML form field tags for Rails Form Builder 
 The 4 options are required: model, form, name, and type.
 Here are more options:
 - label: the customized label text.
-- label_class: the CSS class for the label tag.
-- field_class: the CSS class for the wrapper of the form control.
-- error_class: the CSS class for the validation error block of this field.
+- group_class: The CSS class for the form group wrapper. The .form-group class is mandatory, and can not be removed.
+- label_class: the CSS class for the label tag. The .control-label class is mandatory, and can not be removed.
+- field_class: the CSS class for the wrapper of the form control. The .input-group class is mandatory, and can not be removed.
+- error_class: the CSS class for the validation error block of this field. The .text-danger class is mandatory, and can not be removed.
+- error_hidden: Determines whether the error message block should be shown if the field has any error.
 - prefix: the HTML source codes of input group addon before the form control.
 - suffix: the HTML source codes of input group addon after the form control.

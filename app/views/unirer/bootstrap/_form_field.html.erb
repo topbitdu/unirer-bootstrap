@@ -27,6 +27,8 @@
       maxlength:   options[:maxlength],
       required:    options[:required]
     }
+
+  error_hidden = options[:error_hidden]
 %>
 
 <div class='<%= group_class %>'>
@@ -49,7 +51,7 @@
     <% end %>
   </div>
 
-  <% if model.errors[name].present? %>
+  <% if model.errors[name].present? && !error_hidden %>
     <p class='<%= error_class %>'><%= model.errors[name].first %></p>
   <% end %>
 

@@ -1,16 +1,11 @@
-<%= javascript_include_tag '//cdn.bootcss.com/jquery/2.2.1/jquery.min.js'          %>
-<%= javascript_include_tag '//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js' %>
+<% options = defined?(options) ? options : nil %>
+<%= javascript_include_tag "//cdn.bootcss.com/jquery/#{library_version(:jquery, '2.2.1', options)}/jquery.min.js"             %>
+<%= javascript_include_tag "//cdn.bootcss.com/bootstrap/#{library_version(:bootstrap, '3.3.6', options)}/js/bootstrap.min.js" %>
 
-<%= javascript_include_tag '//cdn.bootcss.com/moment.js/2.11.1/moment-with-locales.min.js'                         %>
-<%= javascript_include_tag '//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js' %>
+<%= javascript_include_tag "//cdn.bootcss.com/moment.js/#{library_version(:'moment-with-locales', '2.11.1', options)}/moment-with-locales.min.js" if library_enabled?(:'moment-with-locales', options) %>
+<%= javascript_include_tag "//cdn.bootcss.com/bootstrap-datetimepicker/#{library_version(:'bootstrap-datetimepicker', '4.17.37', options)}/js/bootstrap-datetimepicker.min.js" if library_enabled?(:'bootstrap-datetimepicker', options) %>
 
-<% if defined?(options) && options.try(:[], :react).present? %>
-  <% react_version = options[:react].try(:[], :version) %>
-  <% if react_version.present? %>
-    <%= javascript_include_tag "//cdn.bootcss.com/react/#{react_version}/react.min.js"     %>
-    <%= javascript_include_tag "//cdn.bootcss.com/react/#{react_version}/react-dom.min.js" %>
-  <% else %>
-    <%= javascript_include_tag '//cdn.bootcss.com/react/0.14.7/react.min.js'     %>
-    <%= javascript_include_tag '//cdn.bootcss.com/react/0.14.7/react-dom.min.js' %>
-  <% end %>
+<% if library_enabled?(:react, options) %>
+  <%= javascript_include_tag "//cdn.bootcss.com/react/#{library_version(:react, '0.14.7', options)}/react.min.js"     %>
+  <%= javascript_include_tag "//cdn.bootcss.com/react/#{library_version(:react, '0.14.7', options)}/react-dom.min.js" %>
 <% end %>
