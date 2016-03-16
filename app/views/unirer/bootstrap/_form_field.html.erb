@@ -7,12 +7,14 @@
   group_class_list = [ 'form-group',    options[:group_class] ]
   label_class_list = [ 'control-label', options[:label_class]||'col-xs-2'  ]
   field_class_list = [ 'input-group',   options[:field_class]||'col-xs-10' ]
+  input_class_list = [ 'form-control',  options[:input_class] ]
   error_class_list = [ 'text-danger',   options[:error_class]||'col-xs-offset-2 col-xs-10' ]
   group_class_list << 'has-error' if model.errors[name].present?
 
   group_class = group_class_list.flatten.join ' '
   label_class = label_class_list.flatten.join ' '
   field_class = field_class_list.flatten.join ' '
+  input_class = input_class_list.flatten.join ' '
   error_class = error_class_list.flatten.join ' '
 
   label_text = options[:label]
@@ -21,7 +23,7 @@
 
   field_options = {
       disabled:    options[:disabled],
-      class:       'form-control',
+      class:       input_class_list,
       placeholder: options[:placeholder],
       readonly:    options[:readonly],
       maxlength:   options[:maxlength],

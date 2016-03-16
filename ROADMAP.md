@@ -26,3 +26,8 @@
 3. Improved the Style partial to make the Bootstrap CSS library configurable
 4. Improved the Style partial to make the Font Awesome & Bootstrap Date Time Picker CSS library switchable & configurable
 5. Improved the Form Field partial to support the :error_hidden option
+
+## v0.7
+1. Improved the Style partial to make the Bootstrap Theme & Bootstrap Table & Bootstrap Date Picker & Buttons & Animate.css CSS library switchable & configurable
+2. Improved the Script partial to make the Bootstrap Table & Bootstrap Date Picker & Buttons JavaScript library switchable & configurable
+3. Improved the Form Field partial to support the :input_class option

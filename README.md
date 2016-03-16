@@ -61,7 +61,16 @@ The following code snippet loads the latest React JS.
 
 The following code snippet loads the React JS with the given version.
 ```erb
-<%= render partial: 'unirer/bootstrap/script', locals: { options: { :jquery => { version: '2.2.0' }, :'moment-with-locales' => true, :'bootstrap-datetimepicker' => true, :react => { version: '0.14.6' } } } %>
+<%= render partial: 'unirer/bootstrap/script',
+           locals: {
+             options: {
+               :jquery => { version: '2.2.0' },
+               :'moment-with-locales' => true,
+               :'bootstrap-datetimepicker' => true,
+               :react => { version: '0.14.6' }
+             }
+           }
+%>
 ```
 The following JavaScript libraries are always enabled, only the version can be configurable:
 - :jquery
@@ -69,6 +78,9 @@ The following JavaScript libraries are always enabled, only the version can be c
 The following JavaScript libraries are switchable, and the version can be configurable:
 - :'moment-with-locales'
 - :'bootstrap-datetimepicker'
+- :'bootstrap-datepicker'
+- :'bootstrap-table'
+- :buttons
 - :react
 
 
@@ -81,8 +93,13 @@ The Style partial includes the HTML style tags for Bootstrap and Font Awesome. A
 The following CSS libraries are always enabled, only the version can be configurable:
 - :bootstrap
 The following JavaScript libraries are switchable, and the version can be configurable:
+- :'bootstrap-theme'
 - :'font-awesome'
 - :'bootstrap-datetimepicker'
+- :'bootstrap-datepicker'
+- :'bootstrap-table'
+- :buttons
+- :'animate.css'
 
 
 

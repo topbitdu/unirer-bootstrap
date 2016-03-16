@@ -4,6 +4,14 @@
 
 <%= javascript_include_tag "//cdn.bootcss.com/moment.js/#{library_version(:'moment-with-locales', '2.11.1', options)}/moment-with-locales.min.js" if library_enabled?(:'moment-with-locales', options) %>
 <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-datetimepicker/#{library_version(:'bootstrap-datetimepicker', '4.17.37', options)}/js/bootstrap-datetimepicker.min.js" if library_enabled?(:'bootstrap-datetimepicker', options) %>
+<%= javascript_include_tag "//cdn.bootcss.com/bootstrap-datepicker/#{library_version(:'bootstrap-datepicker', '1.6.0', options)}/js/bootstrap-datepicker.min.js" if library_enabled?(:'bootstrap-datepicker', options) %>
+
+<% if library_enabled?(:'bootstrap-table', options) %>
+  <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-table/#{library_version(:'bootstrap-table', '1.10.0', options)}/bootstrap-table.min.js" %>
+  <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-table/#{library_version(:'bootstrap-table', '1.10.1', options)}/locale/bootstrap-table-zh-CN.min.js", charset: 'UTF-8' %>
+<% end %>
+
+<%= javascript_include_tag "//cdn.bootcss.com/Buttons/#{library_version(:buttons, '2.0.0', options)}/js/buttons.min.js" if library_enabled?(:buttons, options) %>
 
 <% if library_enabled?(:react, options) %>
   <%= javascript_include_tag "//cdn.bootcss.com/react/#{library_version(:react, '0.14.7', options)}/react.min.js"     %>
