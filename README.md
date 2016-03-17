@@ -80,6 +80,7 @@ The following JavaScript libraries are switchable, and the version can be config
 - :'bootstrap-datetimepicker'
 - :'bootstrap-datepicker'
 - :'bootstrap-table'
+- :'bootstrap-fileinput'
 - :buttons
 - :react
 
@@ -98,6 +99,7 @@ The following JavaScript libraries are switchable, and the version can be config
 - :'bootstrap-datetimepicker'
 - :'bootstrap-datepicker'
 - :'bootstrap-table'
+- :'bootstrap-fileinput'
 - :buttons
 - :'animate.css'
 
@@ -106,8 +108,36 @@ The following JavaScript libraries are switchable, and the version can be config
 ### Render the Form Field
 The Form Field partial includes the HTML form field tags for Rails Form Builder and Bootstrap.
 ```erb
-<%= render partial: 'unirer/bootstrap/form_field', locals: { options: { model: model, form: f, name: :phone_number, type: :tel_field } } %>
+<%= render partial: 'unirer/bootstrap/form_field',
+           locals: {
+             options: {
+               model: model,
+               form:  f,
+               name:  :phone_number,
+               type: :tel_field
+             }
+           }
+%>
 ```
+
+
+
+### Render the Form Select Box
+The Form Select Box partial includes the HTML select tags for Rails Form Builder and Bootstrap.
+```ruby
+<%= render partial: 'unirer/bootstrap/form_field',
+           locals: {
+             options: {
+               model:   model,
+               form:    f,
+               name:    :country_id,
+               choices: @countries.select('id, name').map { |country| [ country.name, country.id ] },
+               options: { prompt: '请选择国家' }
+             }
+           }
+%>
+```
+
 
 The 4 options are required: model, form, name, and type.
 Here are more options:

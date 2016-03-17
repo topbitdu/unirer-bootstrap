@@ -11,6 +11,11 @@
   <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-table/#{library_version(:'bootstrap-table', '1.10.1', options)}/locale/bootstrap-table-zh-CN.min.js", charset: 'UTF-8' %>
 <% end %>
 
+<% if library_enabled?(:'bootstrap-fileinput', options) %>
+  <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-fileinput/#{library_version(:'bootstrap-fileinput', '4.3.1', options)}/js/fileinput.min.js" %>
+  <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-fileinput/#{library_version(:'bootstrap-fileinput', '4.3.1', options)}/js/fileinput_locale_zh.min.js", charset: 'UTF-8' %>
+<% end %>
+
 <%= javascript_include_tag "//cdn.bootcss.com/Buttons/#{library_version(:buttons, '2.0.0', options)}/js/buttons.min.js" if library_enabled?(:buttons, options) %>
 
 <% if library_enabled?(:react, options) %>

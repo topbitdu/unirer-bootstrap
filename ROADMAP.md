@@ -31,3 +31,9 @@
 1. Improved the Style partial to make the Bootstrap Theme & Bootstrap Table & Bootstrap Date Picker & Buttons & Animate.css CSS library switchable & configurable
 2. Improved the Script partial to make the Bootstrap Table & Bootstrap Date Picker & Buttons JavaScript library switchable & configurable
 3. Improved the Form Field partial to support the :input_class option
+
+## v0.8
+1. Improved the Style partial to make the Bootstrap File Input CSS library switchable & configurable
+2. Improved the Script partial to make the Bootstrap File Input JavaScript library switchable & configurable
+3. Improved the Form Field partial to omit the .input-group DOM if both the prefix and suffix are blank
+4. Form Select Box partial

@@ -2,13 +2,12 @@
   model = options[:model]
   form  = options[:form]
   name  = options[:name]
-  type  = options[:type]||:text_field
 
   group_class_list = [ 'form-group',    options[:group_class] ]
-  label_class_list = [ 'control-label', options[:label_class]||'col-xs-2'  ]
-  field_class_list = [ 'input-group',   options[:field_class]||'col-xs-10' ]
+  label_class_list = [ 'control-label', options[:label_class] ]
+  field_class_list = [ 'input-group',   options[:field_class] ]
   input_class_list = [ 'form-control',  options[:input_class] ]
-  error_class_list = [ 'text-danger',   options[:error_class]||'col-xs-offset-2 col-xs-10' ]
+  error_class_list = [ 'text-danger',   options[:error_class] ]
   group_class_list << 'has-error' if model.errors[name].present?
 
   group_class = group_class_list.flatten.join ' '
@@ -17,20 +16,20 @@
   input_class = input_class_list.flatten.join ' '
   error_class = error_class_list.flatten.join ' '
 
-  label_text = options[:label]
+  label_text = options[:label_text]
   prefix     = options[:prefix]
   suffix     = options[:suffix]
 
   input_options = {
-      disabled:    options[:disabled],
-      class:       input_class_list,
-      placeholder: options[:placeholder],
-      readonly:    options[:readonly],
-      maxlength:   options[:maxlength],
-      required:    options[:required]
+      class:    input_class_list,
+      disabled: options[:disabled],
+      readonly: options[:readonly]
     }
 
   error_hidden = options[:error_hidden]
+
+  choices = options[:choices]
+  flags   = options[:options]
 %>
 
 <div class='<%= group_class %>'>
@@ -48,7 +47,7 @@
         <span class='input-group-addon'><%= prefix %></span>
       <% end %>
 
-      <%= form.send type, name, input_options %>
+      <%= form.select name, choices, flags, input_options %>
 
       <% if suffix.present? %>
         <span class='input-group-addon'><%= suffix %></span>
@@ -57,7 +56,7 @@
 
   <% else %>
 
-    <%= form.send type, name, input_options %>
+    <%= form.select name, choices, flags, input_options %>
 
   <% end %>
 
