@@ -48,6 +48,22 @@ The source codes of the Meta partial:
 
 
 
+### Render the Favorite Icon
+The Icon partial includes the HTML link tags for Favorite Icons.
+```erb
+<%= render partial: 'unirer/bootstrap/icon',
+           locals: {
+             options: {
+               safari_mask_icon_color:            '#5bbad5',
+               microsoft_application_title_color: '#da532c',
+               theme_color:                       '#ffffff'
+             }
+           }
+%>
+```
+
+
+
 ### Render the Script
 The Script partial includes the HTML script tags for jQuery, Bootstrap, and React. All the CDN servers of the JavaScript libraries are optimized for China only. The following code snippet does not load React JS.
 ```erb

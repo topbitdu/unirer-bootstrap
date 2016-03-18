@@ -37,3 +37,6 @@
 2. Improved the Script partial to make the Bootstrap File Input JavaScript library switchable & configurable
 3. Improved the Form Field partial to omit the .input-group DOM if both the prefix and suffix are blank
 4. Form Select Box partial
+
+## v0.9
+1. Icon partial
