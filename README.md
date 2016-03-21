@@ -89,6 +89,7 @@ The following code snippet loads the React JS with the given version.
 %>
 ```
 The following JavaScript libraries are always enabled, only the version can be configurable:
+- :modernizr
 - :jquery
 - :bootstrap
 The following JavaScript libraries are switchable, and the version can be configurable:
@@ -130,7 +131,7 @@ The Form Field partial includes the HTML form field tags for Rails Form Builder 
                model: model,
                form:  f,
                name:  :phone_number,
-               type: :tel_field
+               type:  :telephone_field
              }
            }
 %>
@@ -159,9 +160,11 @@ The 4 options are required: model, form, name, and type.
 Here are more options:
 - label: the customized label text.
 - group_class: The CSS class for the form group wrapper. The .form-group class is mandatory, and can not be removed.
-- label_class: the CSS class for the label tag. The .control-label class is mandatory, and can not be removed.
+- label_class: the CSS class for the HTML label tag. The .control-label class is mandatory, and can not be removed.
 - field_class: the CSS class for the wrapper of the form control. The .input-group class is mandatory, and can not be removed.
+- input_class: The CSS class for the HTML input tag. The .form-control class is mandatory, and can not be removed.
 - error_class: the CSS class for the validation error block of this field. The .text-danger class is mandatory, and can not be removed.
+- input_data: The HTML 5 Data attribute for the input tag.
 - error_hidden: Determines whether the error message block should be shown if the field has any error.
 - prefix: the HTML source codes of input group addon before the form control.
 - suffix: the HTML source codes of input group addon after the form control.

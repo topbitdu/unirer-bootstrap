@@ -40,3 +40,7 @@
 
 ## v0.9
 1. Icon partial
+
+## v0.10
+1. Improved the Form Field partial to support the :input_data option
+2. Improved the Script partial to make the Modernizr JavaScript library switchable & configurable

@@ -17,6 +17,10 @@
   input_class = input_class_list.flatten.join ' '
   error_class = error_class_list.flatten.join ' '
 
+  group_data = options[:group_data]
+  field_data = options[:field_data]
+  input_data = options[:input_data]
+
   label_text = options[:label]
   prefix     = options[:prefix]
   suffix     = options[:suffix]
@@ -27,7 +31,8 @@
       placeholder: options[:placeholder],
       readonly:    options[:readonly],
       maxlength:   options[:maxlength],
-      required:    options[:required]
+      required:    options[:required],
+      data:        input_data
     }
 
   error_hidden = options[:error_hidden]
