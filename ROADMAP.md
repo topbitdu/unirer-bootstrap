@@ -45,5 +45,8 @@
 1. Improved the Form Field partial to support the :input_data option
 2. Improved the Script partial to make the Modernizr JavaScript library switchable & configurable
 
-## 0.11
+## v0.11
+1. Improved the Form Field partial to support the :input_accept option
+
+## 0.12
 1. Improved the Script partial to upgrade the default version of jQuery from v2.2.1 to v2.2.2

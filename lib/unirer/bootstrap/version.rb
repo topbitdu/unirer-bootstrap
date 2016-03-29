@@ -1,5 +1,5 @@
 module Unirer
   module Bootstrap
-    VERSION = '0.10'.freeze
+    VERSION = '0.11'.freeze
   end
 end

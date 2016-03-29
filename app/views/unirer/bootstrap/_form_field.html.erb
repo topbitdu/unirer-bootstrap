@@ -34,6 +34,8 @@
       required:    options[:required],
       data:        input_data
     }
+  input_options[:accept] = options[:accept] if options[:accept].present?
+
 
   error_hidden = options[:error_hidden]
 %>

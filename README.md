@@ -6,6 +6,14 @@
 Unirer (UNIfied Resource Representation) is a series of resource representation engines. The Bootstrap resource representation engine includes Bootstrap-based resource representation templates & snippets.
 Unirer (统一资源表现)是一系列的资源表现引擎。Bootstrap 资源表现引擎包括基于Bootstrap的资源表现模版和片段。
 
+
+
+## Recent Update
+Check out the [Road Map](ROADMAP.md) to find out what's the next.
+Check out the [Change Log](CHANGELOG.md) to find out what's new.
+
+
+
 ## Usage in Gemfile
 ```ruby
 gem 'unirer-bootstrap'
@@ -135,6 +143,17 @@ The Form Field partial includes the HTML form field tags for Rails Form Builder 
              }
            }
 %>
+<%= render partial: 'unirer/bootstrap/form_field',
+           locals: {
+             options: {
+               model: model,
+               form:  f,
+               name:  :photo,
+               type:  :file_field,
+               input_accept: 'image/*'
+             }
+           }
+%>
 ```
 
 
@@ -164,6 +183,7 @@ Here are more options:
 - field_class: the CSS class for the wrapper of the form control. The .input-group class is mandatory, and can not be removed.
 - input_class: The CSS class for the HTML input tag. The .form-control class is mandatory, and can not be removed.
 - error_class: the CSS class for the validation error block of this field. The .text-danger class is mandatory, and can not be removed.
+- input_accept: The HTML 5 attribute for the file input tag.
 - input_data: The HTML 5 Data attribute for the input tag.
 - error_hidden: Determines whether the error message block should be shown if the field has any error.
 - prefix: the HTML source codes of input group addon before the form control.
