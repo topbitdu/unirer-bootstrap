@@ -47,3 +47,6 @@
 
 ## v0.11
 1. Improved the Form Field partial to support the :input_accept option
+
+## v0.12
+1. Deprecated this Ruby Gem to use [Repres HyperText](https://badge.fury.io/rb/repres-hyper_text) & [Repres Bootstrap](https://badge.fury.io/rb/repres-bootstrap) instead

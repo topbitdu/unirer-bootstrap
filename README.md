@@ -11,6 +11,7 @@ Unirer (统一资源表现)是一系列的资源表现引擎。Bootstrap 资源�
 ## Recent Update
 Check out the [Road Map](ROADMAP.md) to find out what's the next.
 Check out the [Change Log](CHANGELOG.md) to find out what's new.
+This Ruby Gem is deprecated. Please use [Repres HyperText](https://badge.fury.io/rb/repres-hyper_text) & [Repres Bootstrap](https://badge.fury.io/rb/repres-bootstrap) instead.
 
 
 
